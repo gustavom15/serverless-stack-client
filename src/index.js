@@ -4,10 +4,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Amplify } from 'aws-amplify';
 
+import { initSentry } from './libs/errorLib';
 import config from './config';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+initSentry();
 
 Amplify.configure({
   Auth: {
